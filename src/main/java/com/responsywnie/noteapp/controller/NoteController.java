@@ -5,6 +5,8 @@ import com.responsywnie.noteapp.model.Note;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/note")
 public class NoteController {
@@ -17,13 +19,13 @@ public class NoteController {
     }
 
     @GetMapping("/note")
-    String postmanTestEndpoint(){
-        return "note";
+    List<Note> postmanTestEndpoint(){
+        return noteDao.getAllNote();
     }
 
     @PostMapping("/add")
     String addNote(@RequestBody Note note){
         noteDao.addNote(note);
-        return "Add note to MongoDB";
+        return "Add note to MongoDB"+ note.getId();
     }
 }
