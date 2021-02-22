@@ -3,14 +3,14 @@ package com.responsywnie.noteapp.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 @Document(collection = "NoteBase")
 public class Note {
 
-    @MongoId
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String subject;
