@@ -4,11 +4,11 @@ import com.responsywnie.noteapp.dao.NoteDAO;
 import com.responsywnie.noteapp.model.Note;
 import com.responsywnie.noteapp.service.NoteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/note")
+@Controller
 public class NoteController {
 
     @Autowired
@@ -24,15 +24,21 @@ public class NoteController {
 
     @GetMapping("/all")
     public String showNote(Model model) {
-        model.addAttribute("listNote",service.allNote());
-        return "note";
+        model.addAttribute("listNote",repository.findAll());
+        return "index";
     }
 
-    @PostMapping(value = "/add")
+    @GetMapping("/showNewNoteForm")
+    public String showNewNoteForm(Model model){
+        Note note = new Note();
+        model.addAttribute("note",note);
+        return "new_note";
+    }
+
+    @PostMapping(value = "/new_note")
     public String addNote(@ModelAttribute("note") Note note,Model model) {
         service.addNote(note);
-        model.addAttribute("note",new Note());
-        return "note";
+        model.addAttribute("message","Dodano notatkę!");
+        return "index";
     }
-
 }

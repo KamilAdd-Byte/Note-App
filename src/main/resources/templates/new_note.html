@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Kreator notatek</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<link href="https://igoradamenko.github.io/awsm.css/css/awsm_theme_black.min.css" rel="stylesheet">
+</head>
+<body>
+<main>
+	<!--/*@thymesVar id="note" type="com.responsywnie.noteapp.model.Note"*/-->
+	<form action="#" th:action="@{/new_note}" th:object="${note}" method="POST">
+		<fieldset>
+			<legend>Temat notki</legend>
+			<label>
+				<input type="text" th:field="*{subject}"/>
+			</label>
+		</fieldset>
+		<fieldset>
+			<legend> Treść notki </legend>
+			<label>
+				<input  name="description" type="text" th:field="*{description}">
+			</label>
+		</fieldset>
+		<fieldset>
+			<legend>Autor</legend>
+			<label>
+				<input name="author" type="text" th:field="*{author}" >
+			</label>
+		</fieldset>
+		<button type="submit">Dodaj notke</button>
+	</form>
+</main>
+</body>
+</html>

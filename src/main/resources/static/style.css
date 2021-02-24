@@ -1,6 +1,6 @@
 body
 {
-    background-image: url(https://scontent.fpoz4-1.fna.fbcdn.net/v/t1.0-9/101468491_3954967931240600_8872850517353562112_n.jpg?_nc_cat=109&ccb=3&_nc_sid=09cbfe&_nc_ohc=f-Cv_zNYaDAAX9VoDfx&_nc_ht=scontent.fpoz4-1.fna&oh=47217d22e2de404a83f20bf72c2dc077&oe=60591E18);
+    background-image: url(https://st3.depositphotos.com/13194036/35885/i/600/depositphotos_358851100-stock-photo-top-view-empty-notepad-pencil.jpg);
 }
 
 h1
@@ -20,4 +20,8 @@ h1
     font-size: 40px;
     font-family: 'Marck Script', cursive;
     padding-top: 30px;
+}
+table
+{
+    align-content: center;
 }
