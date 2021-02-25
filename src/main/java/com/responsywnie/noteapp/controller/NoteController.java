@@ -51,8 +51,9 @@ public class NoteController {
         return "redirect:/index";
     }
     @GetMapping("/remove/{note}")
-    public String removeOneNote(@PathVariable("note") Note note){
+    public String removeOneNote(@PathVariable("note") Note note,Model model){
         service.removeNote(note);
+        model.addAttribute("message","Usunięto notatkę");
         return "redirect:/index";
     }
 }

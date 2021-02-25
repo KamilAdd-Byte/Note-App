@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @EnableMongoRepositories
-public interface NoteDAO extends MongoRepository<Note,Integer> {
+public interface NoteDAO extends MongoRepository<Note,String> {
 }

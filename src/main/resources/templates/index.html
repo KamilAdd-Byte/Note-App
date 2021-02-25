@@ -11,9 +11,10 @@
 
 <div id="container">
 	<div id="logo">
-		<h1>Notatki</h1>
+		<h1 th:if="${message != null}" th:text="${me}">Notatki</h1>
 	</div>
 	<div id="content">
+
 		<table class="table table-striped table-responsive-lg" th:border="2">
 			<!--tu przyciski-->
 			<thead>
@@ -34,7 +35,7 @@
 				<td th:text="${note.author}"></td>
 				<td align="center">
 					<!--			<a th:href="@{//{id}(id=${.id})}" class="btn btn-outline-warning"> Edytuj </a>-->
-								<a th:href="@{/remove/{note}(note=${note})}" class="btn btn-outline-danger"> Usuń notatkę </a>
+								<a th:href="@{/remove/{note}(note=${note.id})}"  class="btn btn-outline-danger"> Usuń notatkę </a>
 				</td>
 			</tr>
 			</tbody>
