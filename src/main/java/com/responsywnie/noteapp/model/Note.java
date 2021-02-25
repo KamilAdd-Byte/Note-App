@@ -31,11 +31,11 @@ public class Note {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Note note = (Note) o;
-        return id.equals(note.id) && subject.equals(note.subject) && description.equals(note.description) && author.equals(note.author) && audit.equals(note.audit);
+        return id.equals(note.id) && subject.equals(note.subject) && description.equals(note.description) && author.equals(note.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, subject, description, author, audit);
+        return Objects.hash(id, subject, description, author);
     }
 }
