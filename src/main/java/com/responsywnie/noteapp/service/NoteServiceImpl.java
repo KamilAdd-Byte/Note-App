@@ -4,8 +4,6 @@ import com.responsywnie.noteapp.dao.NoteDAO;
 import com.responsywnie.noteapp.model.Note;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,5 +20,10 @@ public class NoteServiceImpl implements NoteService{
     @Override
     public void addNote(Note note) {
         this.repository.save(note);
+    }
+
+    @Override
+    public void removeNote(Note note) {
+        this.repository.delete(note);
     }
 }

@@ -9,4 +9,5 @@ import java.util.List;
 public interface NoteService {
     List<Note> allNote();
     void addNote(Note note);
+    void removeNote(Note note);
 }

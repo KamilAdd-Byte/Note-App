@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -47,6 +48,11 @@ public class NoteController {
     public String addNewNote(@ModelAttribute("note") Note note, Model model) {
         service.addNote(note);
         model.addAttribute("message", "Dodano notatkę!");
+        return "redirect:/index";
+    }
+    @GetMapping("/remove/{note}")
+    public String removeOneNote(@PathVariable("note") Note note){
+        service.removeNote(note);
         return "redirect:/index";
     }
 }
