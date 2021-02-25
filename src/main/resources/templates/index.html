@@ -28,7 +28,7 @@
 			</thead>
 			<tbody>
 			<tr th:align="center" th:each="note: ${listNote}">
-				<td th:text="${n}"></td>
+				<td th:text="${note.id.trim()}"></td>
 				<td th:text="${note.subject}"></td>
 				<td th:text="${note.description}"></td>
 				<td th:text="${note.author}"></td>
