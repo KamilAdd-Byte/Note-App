@@ -1,0 +1,13 @@
+body
+{
+    background-image: url("https://images.freeimages.com/images/premium/previews/3316/3316663-pen-and-notepad.jpg");
+}
+#logo
+{
+
+}
+.table:hover
+{
+    pointer-events: auto;
+    padding: 10px;
+}
