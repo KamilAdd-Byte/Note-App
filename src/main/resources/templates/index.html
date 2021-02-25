@@ -19,7 +19,6 @@
 			<!--tu przyciski-->
 			<thead>
 			<tr>
-				<th>Id</th>
 				<th>Temat</th>
 				<th>Treść</th>
 				<th>Autor</th>
@@ -29,13 +28,12 @@
 			</thead>
 			<tbody>
 			<tr th:align="center" th:each="note: ${listNote}">
-				<td th:text="${note.id.trim()}"></td>
 				<td th:text="${note.subject}"></td>
 				<td th:text="${note.description}"></td>
 				<td th:text="${note.author}"></td>
 				<td align="center">
-					<!--			<a th:href="@{//{id}(id=${.id})}" class="btn btn-outline-warning"> Edytuj </a>-->
-								<a th:href="@{/remove/{note}(note=${note.id})}"  class="btn btn-outline-danger"> Usuń notatkę </a>
+					<!--								<a th:href="@{/update/{note}(note=${note.id})}" class="btn btn-outline-warning"> Edytuj </a>-->
+					<a class="btn btn-outline-danger" th:href="@{/remove/{note}(note=${note.id})}"> Usuń notatkę </a>
 				</td>
 			</tr>
 			</tbody>
