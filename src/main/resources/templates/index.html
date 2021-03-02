@@ -10,12 +10,21 @@
 <body>
 
 <div id="container">
-	<div id="logo">
+	<div id="">
+
+	</div>
+	<div id="logo_Note">
 		<h1>Notatki</h1>
 	</div>
+	<div id="info_note">
+		<h4>Dodawaj i usuwaj notki</h4>
+	</div>
+	<div id="navi">
+		<a align="center" th:href="@{/czat}" class="bg-success btn btn-success btn-lg mb-2" type="submit">Komunikator</a>
+		<a align="center" th:href="@{/showNewNoteForm}" class="bg-success btn btn-success btn-lg mb-2" type="submit">Dodaj notatkę</a>
+</div>
 	<div id="content">
-
-		<table class="table table-striped table-responsive-lg" th:border="2">
+		<table class="table table-striped table-responsive-lg" th:border="4">
 			<!--tu przyciski-->
 			<thead>
 			<tr>
@@ -38,11 +47,17 @@
 			</tr>
 			</tbody>
 		</table>
+	</div>
 
+
+	<div>
+		<h1>Komunikator</h1>
 	</div>
-	<div id="navi">
-		<a align="centre" th:href="@{/showNewNoteForm}">Dodaj notatkę</a>
-	</div>
+
+
+
+
+
 	<div id="footer">
 		<h4>KamilAdd-Byte, Wszelkie prawa zastrzeżone</h4>
 	</div>
