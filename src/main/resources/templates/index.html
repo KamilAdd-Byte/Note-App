@@ -3,31 +3,63 @@
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<link href="https://unpkg.com/awsm.css/dist/awsm_theme_black.min.css" rel="stylesheet">
-	<!--	<link rel="stylesheet" href="style.css">-->
+	<link href="https://unpkg.com/awsm.css/dist/awsm_theme_big-stone.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 	<title>Note-App</title>
 </head>
+<style>
+    #container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #logo {
+        padding: 10px;
+        background-color: cornflowerblue;
+        color: black;
+        text-align: center;
+    }
+    #content {
+        align-content: center;
+        padding: 10px;
+        font-size: 24px;
+    }
+
+    table {
+        align-content: baseline;
+        padding: 20px;
+    }
+
+    .table:hover {
+        padding: 10px;
+    }
+
+    #footer {
+        clear: both;
+        background-color: cornflowerblue;
+        font-size: 24px;
+        color: black;
+        text-align: center;
+    }
+    #navi {
+        padding: 20px;
+    }
+</style>
 <body>
 
 <div id="container">
-	<div id="">
+	<div id="logo">
+		<h1>Notatnik domowy</h1>
+	</div>
 
+	<div align="center" id="info_note">
+		<h4><i>Dodawaj i usuwaj notki w prosty sposób</i></h4>
 	</div>
-	<div id="logo_Note">
-		<h1>Notatki</h1>
-	</div>
-	<div id="info_note">
-		<h4>Dodawaj i usuwaj notki</h4>
-	</div>
-	<div id="navi">
-		<a align="center" th:href="@{/czat}" class="bg-success btn btn-success btn-lg mb-2" type="submit">Komunikator</a>
-		<a align="center" th:href="@{/showNewNoteForm}" class="bg-success btn btn-success btn-lg mb-2" type="submit">Dodaj notatkę</a>
-</div>
-	<div id="content">
+
+	<div align="center" id="content">
 		<table class="table table-striped table-responsive-lg" th:border="4">
 			<!--tu przyciski-->
 			<thead>
-			<tr>
+			<tr align="center">
 				<th>Temat</th>
 				<th>Treść</th>
 				<th>Autor</th>
@@ -47,21 +79,14 @@
 			</tr>
 			</tbody>
 		</table>
+		<div align="center" id="navi">
+			<a align="center" class="bg-success btn btn-success btn-lg mb-2" th:href="@{/showNewNoteForm}">Dodaj
+				notatkę</a>
+		</div>
 	</div>
-
-
-	<div>
-		<h1>Komunikator</h1>
-	</div>
-
-
-
-
-
 	<div id="footer">
-		<h4>KamilAdd-Byte, Wszelkie prawa zastrzeżone</h4>
+		<a class="text-dark" href="https://github.com/KamilAdd-Byte/Note-App">NOTE - Simple note - GitHub/KamilAdd-Byte</a>
 	</div>
 </div>
-
 </body>
 </html>

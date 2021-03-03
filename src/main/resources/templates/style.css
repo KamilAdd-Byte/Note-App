@@ -1,13 +1,34 @@
-body
+#container
 {
-    background-image: url("https://images.freeimages.com/images/premium/previews/3316/3316663-pen-and-notepad.jpg");
+
 }
 #logo
 {
-
+: 40px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+table
+{
+    align-content: center;
 }
 .table:hover
 {
     pointer-events: auto;
     padding: 10px;
 }
+#footer
+{
+    clear: both;
+    background-color: black;
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+#navi
+{
+    alignment: center;
+    padding: 20px;
+}
+
