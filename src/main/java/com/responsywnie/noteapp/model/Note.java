@@ -26,6 +26,9 @@ public class Note {
     private String description;
     private String author;
 
+    @Embedded
+    private Audit audit = new Audit();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

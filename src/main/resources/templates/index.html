@@ -12,12 +12,14 @@
         margin-left: auto;
         margin-right: auto;
     }
+
     #logo {
         padding: 10px;
         background-color: cornflowerblue;
         color: black;
         text-align: center;
     }
+
     #content {
         align-content: center;
         padding: 10px;
@@ -40,12 +42,12 @@
         color: black;
         text-align: center;
     }
+
     #navi {
         padding: 20px;
     }
 </style>
 <body>
-
 <div id="container">
 	<div id="logo">
 		<h1>Notatnik domowy</h1>
@@ -63,6 +65,7 @@
 				<th>Temat</th>
 				<th>Treść</th>
 				<th>Autor</th>
+				<th>Data dodania</th>
 				<th>Opcje</th>
 				<!--				<th>Kategoria</th>-->
 			</tr>
@@ -72,6 +75,7 @@
 				<td th:text="${note.subject}"></td>
 				<td th:text="${note.description}"></td>
 				<td th:text="${note.author}"></td>
+				<td th:datetime="${note.getAudit().createOn}"></td>
 				<td align="center">
 					<!--								<a th:href="@{/update/{note}(note=${note.id})}" class="btn btn-outline-warning"> Edytuj </a>-->
 					<a class="btn btn-outline-danger" th:href="@{/remove/{note}(note=${note.id})}"> Usuń notatkę </a>
@@ -85,7 +89,8 @@
 		</div>
 	</div>
 	<div id="footer">
-		<a class="text-dark" href="https://github.com/KamilAdd-Byte/Note-App">NOTE - Simple note - GitHub/KamilAdd-Byte</a>
+		<a class="text-dark" href="https://github.com/KamilAdd-Byte/Note-App">NOTE - Simple note -
+			GitHub/KamilAdd-Byte</a>
 	</div>
 </div>
 </body>
