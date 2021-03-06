@@ -13,8 +13,4 @@ public class NoteAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(NoteAppApplication.class, args);
     }
-    @Bean
-    Validator validator(){
-        return new LocalValidatorFactoryBean();
-    }
 }

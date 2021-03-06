@@ -44,7 +44,7 @@ public class NoteController {
         return "new_note";
     }
 
-    @PostMapping(value = "/new_note")
+    @PostMapping(value = "/save_note")
     public String addNewNote(@ModelAttribute("note") Note note, Model model) {
         service.addNote(note);
         model.addAttribute("message", "Dodano notatkę!");

@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
@@ -22,8 +24,11 @@ public class Note {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
+//    @Size(min = 2, max = 40,message = "Note subject must not be empty")
     private String subject;
+//    @Size(min = 2, max = 40,message = "Note description must not be empty")
     private String description;
+//    @Size(min = 2, max = 40,message = "Note author must not be empty")
     private String author;
 
     @Embedded

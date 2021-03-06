@@ -9,20 +9,24 @@
 <body>
 <main>
 	<!--/*@thymesVar id="note" type="com.responsywnie.noteapp.model.Note"*/-->
-	<form action="#" method="POST" th:action="@{/new_note}" th:object="${note}">
+	<p th:if="validationMessage"></p>
+	<form action="#" method="POST" th:action="@{/save_note}" th:object="${note}">
 
 		<fieldset>
 			<legend>Temat notki</legend>
+			<p th:errors="*{subject}" th:if="${#fields.hasErrors('subject')}">Title errors</p>
 			<label>
 				<input th:field="*{subject}" type="text"/>
 			</label>
 		</fieldset>
+		<p th:errors="*{description}" th:if="${#fields.hasErrors('description')}">Title errors</p>
 		<fieldset>
 			<legend> Treść notki</legend>
 			<label>
 				<input name="description" th:field="*{description}" type="text">
 			</label>
 		</fieldset>
+		<p th:errors="*{author}" th:if="${#fields.hasErrors('author')}">Title errors</p>
 		<fieldset>
 			<legend>Autor</legend>
 			<label>
@@ -30,6 +34,7 @@
 			</label>
 		</fieldset>
 		<button type="submit">Dodaj notke</button>
+		<a th:href="@{/}">Wróć</a>
 	</form>
 </main>
 </body>
