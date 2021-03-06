@@ -4,13 +4,13 @@
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<link href="https://unpkg.com/awsm.css/dist/awsm_theme_big-stone.min.css" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
+<!--	<link href="style.css" rel="stylesheet">-->
 	<title>Note-App</title>
 </head>
 <style>
     #container {
-        margin-left: auto;
-        margin-right: auto;
+        /*margin-left: auto;*/
+        /*margin-right: auto;*/
     }
 
     #logo {
@@ -20,10 +20,15 @@
         text-align: center;
     }
 
+	#info_note
+	{
+		font-size: 16px;
+		font-style: italic;
+	}
     #content {
         align-content: center;
         padding: 10px;
-        font-size: 24px;
+        font-size: 18px;
     }
 
     table {
@@ -75,7 +80,7 @@
 				<td th:text="${note.subject}"></td>
 				<td th:text="${note.description}"></td>
 				<td th:text="${note.author}"></td>
-				<td th:datetime="${note.getAudit().createOn}"></td>
+				<td th:text="${note.audit.createOn}"></td>
 				<td align="center">
 					<!--								<a th:href="@{/update/{note}(note=${note.id})}" class="btn btn-outline-warning"> Edytuj </a>-->
 					<a class="btn btn-outline-danger" th:href="@{/remove/{note}(note=${note.id})}"> Usuń notatkę </a>

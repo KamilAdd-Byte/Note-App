@@ -29,12 +29,6 @@
 				<input name="author" th:field="*{author}" type="text">
 			</label>
 		</fieldset>
-		<fieldset th:hidden="persistOn">
-			<legend>Autor</legend>
-			<label>
-				<input name="author" th:field="*{audit.createOn}" type="datetime-local">
-			</label>
-		</fieldset>
 		<button type="submit">Dodaj notke</button>
 	</form>
 </main>
