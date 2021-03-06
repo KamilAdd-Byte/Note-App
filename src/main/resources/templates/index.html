@@ -4,13 +4,14 @@
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<link href="https://unpkg.com/awsm.css/dist/awsm_theme_big-stone.min.css" rel="stylesheet">
-<!--	<link href="style.css" rel="stylesheet">-->
+	<!--	<link href="style.css" rel="stylesheet">-->
 	<title>Note-App</title>
 </head>
 <style>
     #container {
-        /*margin-left: auto;*/
-        /*margin-right: auto;*/
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #logo {
@@ -20,15 +21,73 @@
         text-align: center;
     }
 
-	#info_note
-	{
-		font-size: 16px;
-		font-style: italic;
-	}
+    #info_note {
+        font-size: 16px;
+        font-style: italic;
+    }
+
     #content {
-        align-content: center;
-        padding: 10px;
+        align-self: center;
+        padding: 20px;
         font-size: 18px;
+    }
+
+    #navi {
+        align-self: center;
+        padding: 10px;
+    }
+
+    a.button {
+        alignment-baseline: center;
+        /*float: left;*/
+        cursor: pointer;
+        width: 60px;
+        padding: 20px 25px 20px 25px;
+        background-color: #a5d5ee;
+        color: #14658f;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid #2f7ea7;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 -1px 0 rgba(64, 38, 5, 0.9);
+
+        -moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+        -webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+        box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+        -webkit-transition: background 0.2s ease-out;
+    }
+
+    a.button:active {
+        background: #f6a000;
+        position: relative;
+        top: 5px;
+        border: 1px solid #702d00;
+
+        -moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+        -webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+        box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
     }
 
     table {
@@ -42,14 +101,11 @@
 
     #footer {
         clear: both;
+        padding: 20px;
         background-color: cornflowerblue;
-        font-size: 24px;
+        font-size: 22px;
         color: black;
         text-align: center;
-    }
-
-    #navi {
-        padding: 20px;
     }
 </style>
 <body>
@@ -63,7 +119,7 @@
 	</div>
 
 	<div align="center" id="content">
-		<table class="table table-striped table-responsive-lg" th:border="4">
+		<table class="table table-striped table-responsive-lg" th:border="2">
 			<!--tu przyciski-->
 			<thead>
 			<tr align="center">
@@ -80,7 +136,7 @@
 				<td th:text="${note.subject}"></td>
 				<td th:text="${note.description}"></td>
 				<td th:text="${note.author}"></td>
-				<td th:text="${note.audit.createOn}"></td>
+				<td th:datetime="${note.getAudit().createOn}"></td>
 				<td align="center">
 					<!--								<a th:href="@{/update/{note}(note=${note.id})}" class="btn btn-outline-warning"> Edytuj </a>-->
 					<a class="btn btn-outline-danger" th:href="@{/remove/{note}(note=${note.id})}"> Usuń notatkę </a>
@@ -88,10 +144,13 @@
 			</tr>
 			</tbody>
 		</table>
-		<div align="center" id="navi">
-			<a align="center" class="bg-success btn btn-success btn-lg mb-2" th:href="@{/showNewNoteForm}">Dodaj
-				notatkę</a>
-		</div>
+	</div>
+
+	<div id="navi" align="center">
+		<a align="center" class="button" th:href="@{/showNewNoteForm}">Dodaj notatkę</a>
+	</div>
+	<div>
+	<h3></h3>
 	</div>
 	<div id="footer">
 		<a class="text-dark" href="https://github.com/KamilAdd-Byte/Note-App">NOTE - Simple note -

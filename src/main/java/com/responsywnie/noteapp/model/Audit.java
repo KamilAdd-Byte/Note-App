@@ -1,7 +1,6 @@
 package com.responsywnie.noteapp.model;
 
 import lombok.Getter;
-
 import javax.persistence.Embeddable;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
