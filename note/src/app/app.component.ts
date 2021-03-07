@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'note-app';
+  showForm = false;
+
+  onSwitchForm(): void {
+    this.showForm = !this.showForm;
+  }
 
 }
