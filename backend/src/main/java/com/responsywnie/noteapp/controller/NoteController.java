@@ -31,12 +31,14 @@ public class NoteController {
     }
 
     @GetMapping("/")
+    @CrossOrigin(origins = "http://localhost:4200")
     public String showAllNote(Model model) {
         model.addAttribute("listNote", repository.findAll());
         return "index";
     }
 
     @GetMapping("/showNewNoteForm")
+    @CrossOrigin(origins = "http://localhost:4200")
     public String showNewNoteForm(Model model) {
         Note note = new Note();
         model.addAttribute("note", note);
@@ -44,12 +46,14 @@ public class NoteController {
     }
 
     @PostMapping(value = "/save_note")
+    @CrossOrigin(origins = "http://localhost:4200")
     public String addNewNote(@ModelAttribute("note") Note note, Model model) {
         service.addNote(note);
         model.addAttribute("message", "Dodano notatkę!");
         return "redirect:/index";
     }
     @GetMapping("/remove/{note}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public String removeOneNote(@PathVariable("note") Note note,Model model){
         service.removeNote(note);
         model.addAttribute("message","Usunięto notatkę");
