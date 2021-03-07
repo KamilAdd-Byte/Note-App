@@ -5,37 +5,109 @@
 	<title>Kreator notatek</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<link href="https://unpkg.com/awsm.css/dist/awsm_theme_big-stone.min.css" rel="stylesheet">
+<style>
+
+    #navi {
+        align-self: center;
+        padding: 20px;
+    }
+
+    a.button {
+        alignment-baseline: center;
+        /*float: left;*/
+        cursor: pointer;
+        width: 40px;
+        padding: 20px 25px 20px 25px;
+        background-color: #a5d5ee;
+        color: #14658f;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid #2f7ea7;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 -1px 0 rgba(64, 38, 5, 0.9);
+
+        -moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+        -webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+        box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 5px 0 #50b0e2, 0 6px 0 #2f7ea7, 0 10px 2px #ccc;
+
+        -webkit-transition: background 0.2s ease-out;
+    }
+
+    a.button:active {
+        background: #f6a000;
+        position: relative;
+        top: 5px;
+        border: 1px solid #702d00;
+
+        -moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+        -webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+
+        box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.6),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7),
+        0 3px 0 #b8882a, 0 4px 0 #593a11, 0 8px 0 #ccc;
+    }
+    #content {
+        align-self: center;
+        padding: 20px;
+        font-size: 18px;
+    }
+</style>
 </head>
 <body>
 <main>
-	<!--/*@thymesVar id="note" type="com.responsywnie.noteapp.model.Note"*/-->
-	<p th:if="validationMessage"></p>
-	<form action="#" method="POST" th:action="@{/save_note}" th:object="${note}">
-
-		<fieldset>
-			<legend>Temat notki</legend>
-			<p th:errors="*{subject}" th:if="${#fields.hasErrors('subject')}">Title errors</p>
-			<label>
-				<input th:field="*{subject}" type="text"/>
-			</label>
-		</fieldset>
-		<p th:errors="*{description}" th:if="${#fields.hasErrors('description')}">Title errors</p>
-		<fieldset>
-			<legend> Treść notki</legend>
-			<label>
-				<input name="description" th:field="*{description}" type="text">
-			</label>
-		</fieldset>
-		<p th:errors="*{author}" th:if="${#fields.hasErrors('author')}">Title errors</p>
-		<fieldset>
-			<legend>Autor</legend>
-			<label>
-				<input name="author" th:field="*{author}" type="text">
-			</label>
-		</fieldset>
-		<button type="submit">Dodaj notke</button>
-		<a th:href="@{/}">Wróć</a>
-	</form>
+	<div id="container">
+		<div id="content">
+			<!--/*@thymesVar id="note" type="com.responsywnie.noteapp.model.Note"*/-->
+			<p th:if="validationMessage"></p>
+			<form action="#" method="POST" th:action="@{/save_note}" th:object="${note}">
+				<fieldset>
+					<legend>Temat notki</legend>
+					<p th:errors="*{subject}" th:if="${#fields.hasErrors('subject')}">Title errors</p>
+					<label>
+						<input th:field="*{subject}" type="text"/>
+					</label>
+				</fieldset>
+				<p th:errors="*{description}" th:if="${#fields.hasErrors('description')}">Title errors</p>
+				<fieldset>
+					<legend> Treść notki</legend>
+					<label>
+						<input name="description" th:field="*{description}" type="text">
+					</label>
+				</fieldset>
+				<p th:errors="*{author}" th:if="${#fields.hasErrors('author')}">Title errors</p>
+				<fieldset>
+					<legend>Autor</legend>
+					<label>
+						<input name="author" th:field="*{author}" type="text">
+					</label>
+				</fieldset>
+			</form>
+		</div>
+		<div></div>
+	</div>
 </main>
+<div align="center" class="navi">
+	<a class="button" type="submit">Dodaj</a>
+	<a class="button" th:href="@{/}">Wróć</a>
+</div>
+
 </body>
 </html>
