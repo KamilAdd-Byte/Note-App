@@ -47,6 +47,12 @@
             color: black;
             text-align: center;
         }
+        .Bd {
+            border: solid 1px white;
+        }
+        .Bdc\(red\) {
+            border-color: red !important;
+        }
 	</style>
 </head>
 <body>
@@ -60,28 +66,28 @@
 			</a>
 		</nav>
 		<div align="center" id="content">
-			<!--/*@thymesVar id="note" type="com.responsywnie.noteapp.model.Note"*/-->
+<!--			/*@thymesVar id="note" type="com.responsywnie.noteapp.model.Note"*/-->
 			<p th:if="validationMessage"></p>
 			<form action="#" method="POST" th:action="@{/save_note}" th:object="${note}">
 				<fieldset>
 					<legend>Temat notki</legend>
-					<p th:errors="*{subject}" th:if="${#fields.hasErrors('subject')}">Title errors</p>
 					<label>
-						<input size="100%" th:field="*{subject}" type="text"/>
+						<p th:errors="*{subject}" th:if="${#fields.hasErrors('subject')}" >Title errors</p>
+						<input th:errorclass="'Bdc(red)'" size="100%" th:field="*{subject}" type="text"/>
 					</label>
 				</fieldset>
-				<p th:errors="*{description}" th:if="${#fields.hasErrors('description')}">Title errors</p>
 				<fieldset>
 					<legend> Treść notki</legend>
 					<label>
-						<input name="description" size="100%" th:field="*{description}" type="text">
+						<p th:errors="*{description}" th:if="${#fields.hasErrors('description')}">Title errors</p>
+						<input th:errorclass="'Bdc(red)'" name="description" size="100%" th:field="*{description}" type="text">
 					</label>
 				</fieldset>
-				<p th:errors="*{author}" th:if="${#fields.hasErrors('author')}">Title errors</p>
 				<fieldset>
 					<legend>Autor</legend>
 					<label>
-						<input name="author" size="100%" th:field="*{author}" type="text">
+						<p th:errors="*{author}" th:if="${#fields.hasErrors('author')}">Title errors</p>
+						<input th:errorclass="'Bdc(red)'" name="author" size="100%" th:field="*{author}" type="text">
 					</label>
 				</fieldset>
 				<div align="center" class="navi">

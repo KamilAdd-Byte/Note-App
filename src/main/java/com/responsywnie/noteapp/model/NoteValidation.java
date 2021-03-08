@@ -9,8 +9,8 @@ import javax.validation.Validator;
 @Component
 @Configuration
 public class NoteValidation {
-//    @Bean
-//    Validator validator(){
-//        return new LocalValidatorFactoryBean();
-//    }
+    @Bean
+    Validator validator(){
+        return new LocalValidatorFactoryBean();
+    }
 }

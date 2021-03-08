@@ -6,7 +6,12 @@ import com.responsywnie.noteapp.service.NoteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @CrossOrigin(origins = "http://localhost:4200")
@@ -47,9 +52,13 @@ public class NoteController {
 
     @PostMapping(value = "/save_note")
     @CrossOrigin(origins = "http://localhost:4200")
-    public String addNewNote(@ModelAttribute("note") Note note, Model model) {
+    public String addNewNote(@Valid @ModelAttribute("note") Note note, BindingResult result) {
+        if (result.hasErrors()){
+            List<ObjectError>list = result.getAllErrors();
+            list.forEach(objectError -> System.out.println(objectError.getDefaultMessage()));
+            return "new_note";
+        } else
         service.addNote(note);
-        model.addAttribute("message", "Dodano notatkę!");
         return "redirect:/index";
     }
     @GetMapping("/remove/{note}")
