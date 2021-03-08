@@ -90,6 +90,13 @@
 						<input th:errorclass="'Bdc(red)'" name="author" size="100%" th:field="*{author}" type="text">
 					</label>
 				</fieldset>
+<!--				<fieldset>-->
+<!--					<legend>Data</legend>-->
+<!--					<label>-->
+<!--						<p th:errors="*{audit.createOn}" th:if="${#fields.hasErrors('author')}">Title errors</p>-->
+<!--						<input th:errorclass="'Bdc(red)'" name="author" size="100%" th:field="*{audit.setCreateOn(getAudit().getCreateOn())}" type="datetime-local" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}">-->
+<!--					</label>-->
+<!--				</fieldset>-->
 				<div align="center" class="navi">
 					<button class="btn btn-info" type="submit">Dodaj</button>
 					<a class="btn btn-warning" th:href="@{/}">Wróć</a>
