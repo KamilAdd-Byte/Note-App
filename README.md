@@ -1,19 +1,17 @@
 ## Table of contents
 * [Description](#description)
-* [Database use](#h2)
+* [Database use](#MongoDB)
 * [Technologies](#technologies)
 * [Functionalities](#functionalities)
 * [Deploy](#deploy)
 
 
-## Description
+## Description (Polish version)
 
-Space Finance is an application designed for couples who would like to have an insight into their expenses
-home-type shopping, delivery lunches or trip planning.
+Note-App this is a simple application for adding notes. The Polish version is in view
+Adding a note's done by adding a title, description and author. 
 
-The view layer is supported by thymeleaf and bootstrap 4 and CSS shaping GUI.
-
-This application is programmed for two people (couple). User adds a receipt (fields: price, place and date operation).
+Operations CRUD:  (C)Add note, (R)remove note, (U)Issues EDIT not realized yet, (D)Get all note;
 
 
 ## MongoDB Atlas:
@@ -22,15 +20,15 @@ This application connect with MongoDb Atlas.
 
 ## Technologies:
 
-- backend: Spring-boot, Java 11, Lombok, Thymeleaf.
+- backend: Spring-boot, Java 11, Lombok.
   
-- frontend: Bootstrap 4, Html5, Css.
+- frontend: Thymeleaf, Bootstrap 4, Html5, Css.
 
 ## Functionalities:
 
 - adding a note: title, description and name user;
 - object deleted and modification;
-- view on date note
+- view on list all note;
 
 ## Deploy
 
