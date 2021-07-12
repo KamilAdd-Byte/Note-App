@@ -1,6 +1,6 @@
 ## Table of contents
 * [Description](#description)
-* [Database use](#mongoDB)
+* [Database use](#h2)
 * [Technologies](#technologies)
 * [Functionalities](#functionalities)
 * [Deploy](#deploy)
@@ -16,9 +16,9 @@ The view layer is supported by thymeleaf and bootstrap 4 and CSS shaping GUI.
 This application is programmed for two people (couple). User adds a receipt (fields: price, place and date operation).
 
 
-## H2:
+## MongoDB Atlas:
 
-This application connect with H2 file.
+This application connect with MongoDb Atlas.
 
 ## Technologies:
 
