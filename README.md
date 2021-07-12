@@ -1,3 +1,39 @@
-## Note-App
+## Table of contents
+* [Description](#description)
+* [Database use](#mongoDB)
+* [Technologies](#technologies)
+* [Functionalities](#functionalities)
+* [Deploy](#deploy)
 
-The Note application allows you to add and delete notes. Note has title and creation date. 
+
+## Description
+
+Space Finance is an application designed for couples who would like to have an insight into their expenses
+home-type shopping, delivery lunches or trip planning.
+
+The view layer is supported by thymeleaf and bootstrap 4 and CSS shaping GUI.
+
+This application is programmed for two people (couple). User adds a receipt (fields: price, place and date operation).
+
+
+## H2:
+
+This application connect with H2 file.
+
+## Technologies:
+
+- backend: Spring-boot, Java 11, Lombok, Thymeleaf.
+  
+- frontend: Bootstrap 4, Html5, Css.
+
+## Functionalities:
+
+- adding a note: title, description and name user;
+- object deleted and modification;
+- view on date note
+
+## Deploy
+
+Deploy in Heroku: https://still-scrubland-89063.herokuapp.com/
+login: user222
+password: user222
