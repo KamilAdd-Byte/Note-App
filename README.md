@@ -11,7 +11,7 @@
 Note-App this is a simple application for adding notes. The Polish version is in view
 Adding a note's done by adding a title, description and author. 
 
-Operations CRUD:  (C)Add note, (R)remove note, (U)Issues EDIT not realized yet, (D)Get all note;
+Operations CRUD:  (C)Add note, (R)remove note, (U)Issues EDIT not realized yet, (D)delete note, Get all note;
 
 
 ## MongoDB Atlas:
